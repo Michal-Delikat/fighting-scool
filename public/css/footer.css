@@ -78,6 +78,7 @@
 }
 
 .site-footer__bottom a {
+  margin-left: auto;
   color: var(--text);
   text-decoration: none;
 }
