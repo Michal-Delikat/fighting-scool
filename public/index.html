@@ -23,7 +23,7 @@
       <a href="#grafik">GRAFIK</a>
       <a href="#cennik">CENNIK</a>
       <a href="#trenerzy">TRENERZY</a>
-      <a href="#trening-probny">DARMOWY TRENING</a>
+      <a href="#trening-probny">PIERWSZY TRENING</a>
       <div class="site-nav__social">
         <a class="social-link" href="#" aria-label="Facebook">
           <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
@@ -165,6 +165,7 @@
           <span class="cennik__price">200 zł <span class="cennik__period">miesięcznie</span></span>
         </li>
       </ul>
+      <a class="btn cennik__cta" href="#trening-probny">Umów trening</a>
     </div>
   </section>
   <section class="trenerzy" id="trenerzy">
@@ -175,19 +176,19 @@
           <div class="trenerzy__photo" aria-hidden="true">MW</div>
           <h3 class="trenerzy__name">Marek Wójcik</h3>
           <p class="trenerzy__disciplines">Muay Thai, Kickboxing</p>
-          <p class="trenerzy__desc">Marek trenuje sporty uderzane od ponad 10 lat i jest jednym z najbardziej doświadczonych zawodników w naszej kadrze. W swoim dorobku ma medale amatorskich mistrzostw Polski w Muay Thai oraz kilkanaście startów w formule K1. Na treningach stawia na czystą technikę i kondycję, a jego grupy tworzą zarówno początkujący, jak i osoby przygotowujące się do walk.</p>
+          <p class="trenerzy__desc">Trenuje sporty uderzane od ponad 10 lat. Medalista amatorskich mistrzostw Polski w Muay Thai, na zajęciach stawia na czystą technikę i kondycję.</p>
         </li>
         <li class="trenerzy__item">
           <div class="trenerzy__photo" aria-hidden="true">TN</div>
           <h3 class="trenerzy__name">Tomasz Nowak</h3>
           <p class="trenerzy__disciplines">boks</p>
-          <p class="trenerzy__desc">Tomasz zaczął boksować w wieku 12 lat i do dziś pozostaje czynnym zawodnikiem. Ma za sobą ponad 40 walk amatorskich oraz tytuł wicemistrza województwa. Jest wymagającym, ale cierpliwym trenerem, który uczy solidnych podstaw: pracy nóg, gardy i kontroli dystansu.</p>
+          <p class="trenerzy__desc">Czynny zawodnik z ponad 40 walkami amatorskimi na koncie. Wymagający, ale cierpliwy trener, który uczy solidnych podstaw: pracy nóg, gardy i kontroli dystansu.</p>
         </li>
         <li class="trenerzy__item">
           <div class="trenerzy__photo" aria-hidden="true">PL</div>
           <h3 class="trenerzy__name">Paweł Lis</h3>
           <p class="trenerzy__disciplines">BJJ, MMA</p>
-          <p class="trenerzy__desc">Paweł jest posiadaczem niebieskiego pasa BJJ i zawodnikiem MMA z kilkoma walkami półzawodowymi na koncie. Treningi trenuje od ośmiu lat, a jego grupy wyróżnia metodyczne podejście i duży nacisk na bezpieczeństwo. Najważniejsze jest dla niego, żeby każdy, niezależnie od poziomu, wychodził z maty z poczuciem postępu.</p>
+          <p class="trenerzy__desc">Niebieski pas BJJ i zawodnik MMA z walkami półzawodowymi. Trenuje od ośmiu lat, stawia na metodyczne podejście i bezpieczeństwo, by każdy wychodził z maty z poczuciem postępu.</p>
         </li>
       </ul>
     </div>
@@ -199,6 +200,7 @@
         <div class="zapis__media">
           <img src="img/first_session-800.webp" srcset="img/first_session-800.webp 800w, img/first_session.webp 1066w" sizes="(min-width: 769px) 50vw, 100vw" alt="" width="1066" height="1600" loading="lazy">
         </div>
+        <div class="zapis__form-col">
         <div class="zapis__hint">
           <h3 class="zapis__hint-title">Nie wiesz, od czego zacząć?</h3>
           <p>Zaznacz w formularzu, że nie wiesz. Dobierzemy zajęcia do Twojego poziomu i celu.</p>
@@ -213,7 +215,7 @@
             <input type="tel" id="zapis-telefon" name="telefon" autocomplete="tel" required>
           </div>
           <div class="zapis__field">
-            <span class="zapis__field-label" id="zapis-dyscyplina-label">Dyscyplina (opcjonalnie)</span>
+            <span class="zapis__field-label" id="zapis-dyscyplina-label">Dyscyplina</span>
             <div class="zapis__select-wrap">
               <button type="button" class="zapis__select" id="zapis-dyscyplina" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="zapis-dyscyplina-label zapis-dyscyplina-value">
                 <span class="zapis__select-value" id="zapis-dyscyplina-value">Nie wiem, od czego zacząć</span>
@@ -230,7 +232,9 @@
           <p class="zapis__success" role="status" aria-live="polite" hidden>Dziękujemy! Oddzwonimy lub napiszemy w ciągu jednego dnia roboczego, żeby potwierdzić termin.</p>
           <p class="zapis__phone">Wolisz zadzwonić? <a href="tel:+48000000000">+48 000 000 000</a></p>
         </form>
+        </div>
       </div>
+      <div class="zapis__faq-layout">
       <div class="zapis__faq">
         <h3 class="zapis__faq-title">Najczęstsze pytania przed pierwszym treningiem</h3>
         <details class="zapis__faq-item">
@@ -253,7 +257,7 @@
           <summary>Czy muszę mieć własny sprzęt?</summary>
           <div class="zapis__faq-body">
             <div class="zapis__faq-body-inner">
-              <p>Jeśli masz własną szczękę zabierz ją ze sobą. Rękawice i ochraniacze możesz pożyczyć w klubie.</p>
+              <p>Jeśli masz własny ochraniacz na zęby, zabierz go ze sobą. Rękawice i ochraniacze możesz pożyczyć w klubie.</p>
             </div>
           </div>
         </details>
@@ -281,6 +285,10 @@
             </div>
           </div>
         </details>
+      </div>
+      <div class="zapis__map">
+        <img src="img/dojazd-mapa.png" alt="Mapa dojazdu" width="576" height="430">
+      </div>
       </div>
     </div>
   </section>

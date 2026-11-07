@@ -64,6 +64,17 @@
   font-size: 15px;
 }
 
+.cennik__cta {
+  display: flex;
+  width: fit-content;
+  margin: 32px auto 0;
+}
+
+.cennik__cta:focus-visible {
+  outline: 2px solid var(--bg);
+  outline-offset: 2px;
+}
+
 @media (min-width: 769px) {
   .cennik {
     padding: 80px 40px;
