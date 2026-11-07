@@ -16,6 +16,12 @@
   gap: 32px;
 }
 
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .site-footer__logo {
   display: flex;
   align-items: center;
@@ -31,6 +37,11 @@
   line-height: 1;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+.site-footer__social {
+  display: flex;
+  gap: 8px;
 }
 
 .site-footer__contact {

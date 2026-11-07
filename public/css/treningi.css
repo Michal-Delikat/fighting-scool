@@ -1,6 +1,6 @@
 .treningi {
-  background: var(--bg);
-  color: var(--text);
+  background: var(--text);
+  color: var(--bg);
   padding: 48px 20px;
 }
 

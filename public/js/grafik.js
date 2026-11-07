@@ -25,10 +25,7 @@
     if (state.discipline && entry.discipline !== state.discipline) {
       return false;
     }
-    if (state.group === 'dorosli' && entry.group !== 'dorośli') {
-      return false;
-    }
-    if (state.group === 'dzieci' && entry.group !== 'dzieci' && entry.group !== 'młodzież') {
+    if (state.group && entry.group !== state.group) {
       return false;
     }
     return true;
@@ -49,15 +46,10 @@
     var meta = document.createElement('span');
     meta.className = 'grafik__meta';
 
-    var level = document.createElement('span');
-    level.className = 'grafik__level';
-    level.textContent = entry.level;
-
     var group = document.createElement('span');
     group.className = 'grafik__group';
-    group.textContent = entry.group;
+    group.textContent = 'Gr. ' + entry.group;
 
-    meta.appendChild(level);
     meta.appendChild(group);
 
     if (entry.room) {
@@ -69,23 +61,7 @@
 
     li.appendChild(time);
     li.appendChild(discipline);
-
-    if (entry.note) {
-      var note = document.createElement('span');
-      note.className = 'grafik__note';
-      note.textContent = entry.note;
-      li.appendChild(note);
-    }
-
     li.appendChild(meta);
-
-    if (entry.level === 'początkujący') {
-      var first = document.createElement('a');
-      first.className = 'grafik__first';
-      first.href = '#trening-probny';
-      first.textContent = 'Dobre na pierwszy trening';
-      li.appendChild(first);
-    }
 
     return li;
   }
@@ -98,9 +74,16 @@
       dayEl.className = 'grafik__day';
       dayEl.setAttribute('data-day', day.id);
 
-      if (day.id === state.activeDay) {
+      var visible = day.classes.filter(matches);
+
+      if (state.activeDay === null) {
+        if (visible.length > 0) {
+          dayEl.classList.add('is-active');
+        }
+      } else if (day.id === state.activeDay) {
         dayEl.classList.add('is-active');
       }
+      dayEl.classList.toggle('is-empty', visible.length === 0);
 
       var heading = document.createElement('h3');
       heading.className = 'grafik__day-name';
@@ -109,8 +92,6 @@
 
       var list = document.createElement('ul');
       list.className = 'grafik__list';
-
-      var visible = day.classes.filter(matches);
 
       if (visible.length === 0) {
         var empty = document.createElement('li');
@@ -126,23 +107,33 @@
       dayEl.appendChild(list);
       daysEl.appendChild(dayEl);
     });
+
+    daysEl.classList.toggle('is-all', state.activeDay === null);
   }
 
   function setActiveDay(id) {
     state.activeDay = id;
 
     Array.prototype.forEach.call(tabsEl.children, function (tab) {
-      var selected = tab.getAttribute('data-day') === id;
+      var selected = id !== null && tab.getAttribute('data-day') === id;
       tab.setAttribute('aria-selected', selected ? 'true' : 'false');
     });
 
     Array.prototype.forEach.call(daysEl.children, function (dayEl) {
-      if (dayEl.getAttribute('data-day') === id) {
+      if (id === null) {
+        if (dayEl.classList.contains('is-empty')) {
+          dayEl.classList.remove('is-active');
+        } else {
+          dayEl.classList.add('is-active');
+        }
+      } else if (dayEl.getAttribute('data-day') === id) {
         dayEl.classList.add('is-active');
       } else {
         dayEl.classList.remove('is-active');
       }
     });
+
+    daysEl.classList.toggle('is-all', id === null);
   }
 
   function renderTabs() {
@@ -158,7 +149,7 @@
       tab.textContent = day.short;
 
       tab.addEventListener('click', function () {
-        setActiveDay(day.id);
+        setActiveDay(state.activeDay === day.id ? null : day.id);
       });
 
       tabsEl.appendChild(tab);
@@ -279,8 +270,9 @@
 
     createDropdown(groupRoot, [
       { value: '', label: 'Wszystkie' },
-      { value: 'dorosli', label: 'Dorośli' },
-      { value: 'dzieci', label: 'Dzieci' }
+      { value: 'początkująca', label: 'Początkująca' },
+      { value: 'mieszana', label: 'Mieszana' },
+      { value: 'zaawansowana', label: 'Zaawansowana' }
     ], function (value) {
       state.group = value;
       applyFilters();

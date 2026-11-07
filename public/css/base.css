@@ -94,6 +94,10 @@ h6 {
   text-transform: uppercase;
 }
 
+h2 {
+  text-align: center;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
