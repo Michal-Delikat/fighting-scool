@@ -1,0 +1,11 @@
+:root {
+  --accent: #F4320C;
+  --accent-dark: #D93A2B;
+  --bg: #0E0E10;
+  --text: #F2F2F0;
+  --radius: 3px;
+
+  --font-heading: "Barlow Condensed", sans-serif;
+  --font-body: "Barlow", sans-serif;
+  --font-button: "Barlow", sans-serif;
+}

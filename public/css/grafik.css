@@ -1,0 +1,291 @@
+.grafik {
+  background: var(--bg);
+  color: var(--text);
+  padding: 48px 20px;
+}
+
+.grafik__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.grafik__title {
+  font-size: clamp(32px, 8vw, 48px);
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.grafik__filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.grafik__filter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  font-size: 13px;
+}
+
+.grafik__select-wrap {
+  position: relative;
+}
+
+.grafik__select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--text);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.grafik__select::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--text);
+  border-bottom: 2px solid var(--text);
+  transform: translateY(-2px) rotate(45deg);
+}
+
+.grafik__select[aria-expanded="true"]::after {
+  transform: translateY(2px) rotate(-135deg);
+}
+
+.grafik__select:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.grafik__options {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 10;
+  max-height: 240px;
+  margin: 0;
+  padding: 4px;
+  overflow-y: auto;
+  list-style: none;
+  border: 1px solid var(--text);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+.grafik__options[hidden] {
+  display: none;
+}
+
+.grafik__options li {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.grafik__options li[aria-selected="true"] {
+  color: var(--accent);
+}
+
+.grafik__options li:focus {
+  outline: 2px solid var(--text);
+  outline-offset: -2px;
+}
+
+.grafik__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.grafik__tab {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--text);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  cursor: pointer;
+}
+
+.grafik__tab[aria-selected="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.grafik__tab:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.grafik__days {
+  display: block;
+}
+
+.grafik__day {
+  display: none;
+}
+
+.grafik__day.is-active {
+  display: block;
+}
+
+.grafik__day-name {
+  display: none;
+}
+
+.grafik__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grafik__class {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px;
+  border: 1px solid var(--text);
+  border-radius: var(--radius);
+}
+
+.grafik__time {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.grafik__discipline {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+.grafik__note {
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.grafik__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-size: 13px;
+}
+
+.grafik__level {
+  text-transform: capitalize;
+}
+
+.grafik__group {
+  text-transform: capitalize;
+}
+
+.grafik__first {
+  align-self: flex-start;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.grafik__first:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.grafik__empty {
+  font-size: 14px;
+}
+
+.grafik__footnote {
+  margin: 24px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.grafik__footnote a {
+  color: var(--accent);
+}
+
+.grafik__footnote a:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+@media (min-width: 769px) {
+  .grafik {
+    padding: 80px 40px;
+  }
+
+  .grafik__title {
+    font-size: clamp(40px, 4vw, 56px);
+  }
+
+  .grafik__filters {
+    flex-direction: row;
+  }
+
+  .grafik__filter {
+    width: 240px;
+  }
+
+  .grafik__tabs {
+    display: none;
+  }
+
+  .grafik__days {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+    align-items: start;
+  }
+
+  .grafik__day {
+    display: block;
+  }
+
+  .grafik__day-name {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 24px;
+    line-height: 1.1;
+  }
+
+
+  .grafik__time {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "disciplines": ["Boks", "Kickboxing", "MMA", "Muay Thai", "BJJ"],
+  "days": [
+    {
+      "id": "pon",
+      "label": "Poniedziałek",
+      "short": "Pon",
+      "classes": [
+        { "start": "12:00", "end": "13:00", "discipline": "Muay Thai", "level": "open", "group": "dorośli", "room": "Sala z ringiem i workami" },
+        { "start": "17:00", "end": "18:30", "discipline": "Boks", "level": "początkujący", "group": "dorośli", "room": "Sala z ringiem i workami" },
+        { "start": "19:00", "end": "20:30", "discipline": "BJJ", "level": "początkujący", "group": "dorośli", "room": "Sala z matą" }
+      ]
+    },
+    {
+      "id": "wt",
+      "label": "Wtorek",
+      "short": "Wt",
+      "classes": [
+        { "start": "16:00", "end": "17:00", "discipline": "Kickboxing", "level": "początkujący", "group": "młodzież", "room": "Sala z ringiem i workami" },
+        { "start": "18:00", "end": "19:30", "discipline": "Muay Thai", "level": "średni", "group": "dorośli", "room": "Sala z ringiem i workami" },
+        { "start": "19:30", "end": "21:00", "discipline": "MMA", "level": "średni", "group": "dorośli", "room": "Sala z matą" }
+      ]
+    },
+    {
+      "id": "sr",
+      "label": "Środa",
+      "short": "Śr",
+      "classes": [
+        { "start": "17:00", "end": "18:30", "discipline": "Muay Thai", "level": "początkujący", "group": "dorośli", "room": "Sala z ringiem i workami" },
+        { "start": "18:30", "end": "20:00", "discipline": "MMA", "level": "początkujący", "group": "dorośli", "room": "Sala z matą" }
+      ]
+    },
+    {
+      "id": "czw",
+      "label": "Czwartek",
+      "short": "Czw",
+      "classes": [
+        { "start": "17:00", "end": "18:00", "discipline": "BJJ", "level": "początkujący", "group": "dzieci", "room": "Sala z matą" },
+        { "start": "17:30", "end": "19:00", "discipline": "Kickboxing", "level": "średni", "group": "dorośli", "room": "Sala z ringiem i workami" },
+        { "start": "19:00", "end": "20:30", "discipline": "Boks", "level": "zaawansowany", "group": "dorośli", "room": "Sala z ringiem i workami" }
+      ]
+    },
+    {
+      "id": "pt",
+      "label": "Piątek",
+      "short": "Pt",
+      "classes": [
+        { "start": "17:00", "end": "18:30", "discipline": "Muay Thai", "level": "początkujący", "group": "dorośli", "room": "Sala z ringiem i workami" },
+        { "start": "18:30", "end": "20:00", "discipline": "MMA", "level": "średni", "group": "dorośli", "room": "Sala z matą" },
+        { "start": "20:00", "end": "21:30", "discipline": "Muay Thai", "level": "zaawansowany", "group": "dorośli", "room": "Sala z ringiem i workami" }
+      ]
+    },
+    {
+      "id": "sob",
+      "label": "Sobota",
+      "short": "Sob",
+      "classes": [
+        { "start": "10:00", "end": "11:30", "discipline": "Muay Thai", "level": "średni", "group": "dorośli", "room": "Sala z ringiem i workami" },
+        { "start": "10:00", "end": "11:00", "discipline": "Kickboxing", "level": "początkujący", "group": "dorośli", "room": "Sala z matą" },
+        { "start": "11:00", "end": "12:30", "discipline": "BJJ", "level": "open", "group": "dorośli", "room": "Sala z matą", "note": "Open mat" }
+      ]
+    }
+  ]
+}
