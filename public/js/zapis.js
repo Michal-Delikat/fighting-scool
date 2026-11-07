@@ -150,6 +150,7 @@
 
     function openItem() {
       animating = true;
+      details.classList.add('is-open');
       details.open = true;
       body.style.overflow = 'hidden';
       body.style.height = '0px';
@@ -176,6 +177,7 @@
 
     function closeItem() {
       animating = true;
+      details.classList.remove('is-open');
 
       var current = body.offsetHeight;
       body.style.overflow = 'hidden';

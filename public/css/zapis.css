@@ -251,18 +251,21 @@
 }
 
 .zapis__faq-item summary::after {
-  content: "+";
+  content: "";
   position: absolute;
   top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  color: var(--accent);
-  font-size: 22px;
-  line-height: 1;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
 }
 
-.zapis__faq-item[open] summary::after {
-  content: "−";
+.zapis__faq-item.is-open summary::after {
+  transform: rotate(-135deg);
 }
 
 .zapis__faq-item summary:focus-visible {

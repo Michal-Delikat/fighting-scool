@@ -17,10 +17,6 @@
 
   var data = null;
 
-  function todayIndex() {
-    return (new Date().getDay() + 6) % 7;
-  }
-
   function matches(entry) {
     if (state.discipline && entry.discipline !== state.discipline) {
       return false;
@@ -292,8 +288,6 @@
     })
     .then(function (json) {
       data = json;
-      var today = todayIndex();
-      state.activeDay = data.days[today] ? data.days[today].id : data.days[0].id;
       initFilters();
       renderTabs();
       renderDays();
