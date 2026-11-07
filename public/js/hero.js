@@ -19,11 +19,50 @@
     }
   } else if (video) {
     video.poster = poster;
-    video.src = video.canPlayType('video/webm') ? base + '.webm' : base + '.mp4';
+
+    var useWebm = !isMobile && video.canPlayType('video/webm');
+    video.src = useWebm ? base + '.webm' : base + '.mp4';
+
     var playPromise = video.play();
     if (playPromise && typeof playPromise.catch === 'function') {
       playPromise.catch(function () {});
     }
+
+    var heroVisible = true;
+
+    var playHero = function () {
+      if (!heroVisible || !video) {
+        return;
+      }
+      var promise = video.play();
+      if (promise && typeof promise.catch === 'function') {
+        promise.catch(function () {});
+      }
+    };
+
+    if ('IntersectionObserver' in window) {
+      var heroObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          heroVisible = entry.isIntersecting;
+          if (heroVisible) {
+            playHero();
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.1 });
+      heroObserver.observe(hero);
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'visible') {
+        playHero();
+      }
+    });
+
+    window.addEventListener('pageshow', function () {
+      playHero();
+    });
   }
 
   var toggle = document.querySelector('.menu-toggle');
