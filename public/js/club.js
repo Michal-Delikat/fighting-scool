@@ -17,6 +17,17 @@
     });
   }
 
+  function setPhone(value) {
+    if (!value) {
+      return;
+    }
+    var href = 'tel:' + value.replace(/[^\d+]/g, '');
+    Array.prototype.forEach.call(document.querySelectorAll('[data-club="phone"]'), function (el) {
+      el.textContent = value;
+      el.href = href;
+    });
+  }
+
   function renderAddress(el, lines) {
     if (!el || !lines || lines.length === 0) {
       return;
@@ -52,6 +63,7 @@
     .then(function (data) {
       setText('[data-club="h1"]', data.h1);
       setText('[data-club="slogan"]', data.slogan);
+      setPhone(data.phone);
       setHrefs('[data-club="facebook"]', data.facebook);
       setHrefs('[data-club="instagram"]', data.instagram);
       renderAddress(document.querySelector('[data-club="address"]'), data.address);

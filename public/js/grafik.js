@@ -33,7 +33,7 @@
 
     var time = document.createElement('span');
     time.className = 'grafik__time';
-    time.textContent = entry.start + '–' + entry.end;
+    time.textContent = entry.end ? entry.start + '–' + entry.end : entry.start;
 
     var discipline = document.createElement('span');
     discipline.className = 'grafik__discipline';
@@ -42,11 +42,12 @@
     var meta = document.createElement('span');
     meta.className = 'grafik__meta';
 
-    var group = document.createElement('span');
-    group.className = 'grafik__group';
-    group.textContent = 'Gr. ' + entry.group;
-
-    meta.appendChild(group);
+    if (entry.group) {
+      var group = document.createElement('span');
+      group.className = 'grafik__group';
+      group.textContent = 'Gr. ' + entry.group;
+      meta.appendChild(group);
+    }
 
     if (entry.room) {
       var room = document.createElement('span');
@@ -264,12 +265,26 @@
       applyFilters();
     });
 
-    createDropdown(groupRoot, [
-      { value: '', label: 'Wszystkie' },
-      { value: 'początkująca', label: 'Początkująca' },
-      { value: 'mieszana', label: 'Mieszana' },
-      { value: 'zaawansowana', label: 'Zaawansowana' }
-    ], function (value) {
+    var groupOptions = [{ value: '', label: 'Wszystkie' }];
+    var groupNames = [];
+    data.days.forEach(function (day) {
+      day.classes.forEach(function (entry) {
+        if (entry.group && groupNames.indexOf(entry.group) === -1) {
+          groupNames.push(entry.group);
+        }
+      });
+    });
+    groupNames.forEach(function (name) {
+      groupOptions.push({ value: name, label: name });
+    });
+
+    if (groupNames.length === 0) {
+      groupRoot.hidden = true;
+      groupRoot.style.display = 'none';
+      return;
+    }
+
+    createDropdown(groupRoot, groupOptions, function (value) {
       state.group = value;
       applyFilters();
     });

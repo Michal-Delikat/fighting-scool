@@ -1,11 +1,11 @@
 {
-  "h1": "KLUB SPORTÓW WALKI",
-  "slogan": "Boks, kickboxing, MMA, Muay Thai, BJJ.",
+  "h1": "BLACK BIRDS Muaythai-Kickboxing",
+  "slogan": "Mocny trening + Dobra walka = Twoje zwycięstwo",
+  "phone": "+48 530 557 997",
   "facebook": "#",
   "instagram": "#",
-  "address": ["ul. Przykładowa 12", "00-000 Warszawa"],
+  "address": ["ul. Sportowa 11", "Piła, Poland, 64-920"],
   "openingHours": [
-    { "label": "Pon. - Pt.", "hours": "7:00 - 22:30" },
-    { "label": "Sob.", "hours": "9:00 - 16:00" }
+    { "label": "Pon. - Czw.", "hours": "18:45 - 20:00" }
   ]
 }
