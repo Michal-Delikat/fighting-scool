@@ -1,5 +1,5 @@
 {
-  "disciplines": ["Boks", "Kickboxing", "MMA", "Muay Thai", "BJJ"],
+  "disciplines": ["Boks", "Kickboxing", "MMA", "Muay Thai"],
   "days": [
     {
       "id": "pon",
@@ -7,8 +7,7 @@
       "short": "Pon",
       "classes": [
         { "start": "12:00", "end": "13:00", "discipline": "Muay Thai", "group": "mieszana" },
-        { "start": "17:00", "end": "18:30", "discipline": "Boks", "group": "początkująca" },
-        { "start": "19:00", "end": "20:30", "discipline": "BJJ", "group": "początkująca" }
+        { "start": "17:00", "end": "18:30", "discipline": "Boks", "group": "początkująca" }
       ]
     },
     {
@@ -35,7 +34,6 @@
       "label": "Czwartek",
       "short": "Czw",
       "classes": [
-        { "start": "17:00", "end": "18:00", "discipline": "BJJ", "group": "początkująca" },
         { "start": "17:30", "end": "19:00", "discipline": "Kickboxing", "group": "mieszana" },
         { "start": "19:00", "end": "20:30", "discipline": "Boks", "group": "zaawansowana" }
       ]
@@ -56,8 +54,7 @@
       "short": "Sob",
       "classes": [
         { "start": "10:00", "end": "11:30", "discipline": "Muay Thai", "group": "mieszana" },
-        { "start": "10:00", "end": "11:00", "discipline": "Kickboxing", "group": "początkująca" },
-        { "start": "11:00", "end": "12:30", "discipline": "BJJ", "group": "mieszana" }
+        { "start": "10:00", "end": "11:00", "discipline": "Kickboxing", "group": "początkująca" }
       ]
     }
   ]
