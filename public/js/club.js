@@ -65,7 +65,6 @@
       setText('[data-club="slogan"]', data.slogan);
       setPhone(data.phone);
       setHrefs('[data-club="facebook"]', data.facebook);
-      setHrefs('[data-club="instagram"]', data.instagram);
       renderAddress(document.querySelector('[data-club="address"]'), data.address);
       renderHours(document.querySelector('[data-club="opening-hours"]'), data.openingHours);
     })

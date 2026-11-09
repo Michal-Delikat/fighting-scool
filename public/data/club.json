@@ -1,9 +1,8 @@
 {
-  "h1": "BLACK BIRDS Muaythai-Kickboxing",
-  "slogan": "Mocny trening + Dobra walka = Twoje zwycięstwo",
+  "h1": "BLACK BIRDS Muaythai Kickboxing",
+  "slogan": "Mocny trening. Dobra walka. Twoje zwycięstwo.",
   "phone": "+48 530 557 997",
-  "facebook": "#",
-  "instagram": "#",
+  "facebook": "https://www.facebook.com/profile.php?id=100057451510051",
   "address": ["ul. Sportowa 11", "Piła, Poland, 64-920"],
   "openingHours": [
     { "label": "Pon. - Czw.", "hours": "18:45 - 20:00" }
