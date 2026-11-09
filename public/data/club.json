@@ -1,11 +1,7 @@
 {
-  "h1": "KLUB SPORTÓW WALKI",
-  "slogan": "Boks, kickboxing, MMA, Muay Thai, BJJ.",
-  "facebook": "#",
-  "instagram": "#",
-  "address": ["ul. Przykładowa 12", "00-000 Warszawa"],
-  "openingHours": [
-    { "label": "Pon. - Pt.", "hours": "7:00 - 22:30" },
-    { "label": "Sob.", "hours": "9:00 - 16:00" }
-  ]
+  "h1": "SSSWK Słubice",
+  "slogan": "Treningi Muaythai, Boks, K-1 dla dzieci, młodzieży i dorosłych.",
+  "facebook": "https://www.facebook.com/p/SSSWK-S%C5%82ubice-100057261768304",
+  "instagram": "https://www.instagram.com/ssswk3/",
+  "address": ["ul. Krucza 6", "Słubice, Poland, 69-100"]
 }

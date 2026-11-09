@@ -17,8 +17,12 @@
 
   var data = null;
 
+  function getDisciplines(entry) {
+    return Array.isArray(entry.disciplines) ? entry.disciplines : [entry.discipline];
+  }
+
   function matches(entry) {
-    if (state.discipline && entry.discipline !== state.discipline) {
+    if (state.discipline && getDisciplines(entry).indexOf(state.discipline) === -1) {
       return false;
     }
     if (state.group && entry.group !== state.group) {
@@ -33,20 +37,21 @@
 
     var time = document.createElement('span');
     time.className = 'grafik__time';
-    time.textContent = entry.start + '–' + entry.end;
+    time.textContent = entry.end ? entry.start + '–' + entry.end : entry.start;
 
     var discipline = document.createElement('span');
     discipline.className = 'grafik__discipline';
-    discipline.textContent = entry.discipline;
+    discipline.textContent = getDisciplines(entry).join(', ');
 
     var meta = document.createElement('span');
     meta.className = 'grafik__meta';
 
-    var group = document.createElement('span');
-    group.className = 'grafik__group';
-    group.textContent = 'Gr. ' + entry.group;
-
-    meta.appendChild(group);
+    if (entry.group) {
+      var group = document.createElement('span');
+      group.className = 'grafik__group';
+      group.textContent = 'Gr. ' + entry.group;
+      meta.appendChild(group);
+    }
 
     if (entry.room) {
       var room = document.createElement('span');
@@ -264,12 +269,22 @@
       applyFilters();
     });
 
-    createDropdown(groupRoot, [
-      { value: '', label: 'Wszystkie' },
-      { value: 'początkująca', label: 'Początkująca' },
-      { value: 'mieszana', label: 'Mieszana' },
-      { value: 'zaawansowana', label: 'Zaawansowana' }
-    ], function (value) {
+    var groupOptions = [{ value: '', label: 'Wszystkie' }];
+    var seenGroups = {};
+
+    data.days.forEach(function (day) {
+      day.classes.forEach(function (entry) {
+        if (entry.group && !seenGroups[entry.group]) {
+          seenGroups[entry.group] = true;
+          groupOptions.push({
+            value: entry.group,
+            label: entry.group.charAt(0).toUpperCase() + entry.group.slice(1)
+          });
+        }
+      });
+    });
+
+    createDropdown(groupRoot, groupOptions, function (value) {
       state.group = value;
       applyFilters();
     });
