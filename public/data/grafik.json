@@ -1,14 +1,13 @@
 {
-  "disciplines": ["Boks", "Kickboxing", "MMA", "Muay Thai", "BJJ"],
+  "disciplines": ["Boks", "Kickboxing", "Muay Thai"],
   "days": [
     {
       "id": "pon",
       "label": "Poniedziałek",
       "short": "Pon",
       "classes": [
-        { "start": "12:00", "end": "13:00", "discipline": "Muay Thai", "group": "mieszana" },
-        { "start": "17:00", "end": "18:30", "discipline": "Boks", "group": "początkująca" },
-        { "start": "19:00", "end": "20:30", "discipline": "BJJ", "group": "początkująca" }
+        { "start": "18:00", "disciplines": ["Kickboxing", "Muay Thai"], "group": "początkująca" },
+        { "start": "19:00", "disciplines": ["Kickboxing", "Muay Thai"], "group": "zaawansowana" }
       ]
     },
     {
@@ -16,9 +15,9 @@
       "label": "Wtorek",
       "short": "Wt",
       "classes": [
-        { "start": "16:00", "end": "17:00", "discipline": "Kickboxing", "group": "początkująca" },
-        { "start": "18:00", "end": "19:30", "discipline": "Muay Thai", "group": "mieszana" },
-        { "start": "19:30", "end": "21:00", "discipline": "MMA", "group": "mieszana" }
+        { "start": "16:00", "disciplines": ["Kickboxing", "Muay Thai"], "group": "dzieci 4-10 lat" },
+        { "start": "17:00", "disciplines": ["Kickboxing", "Muay Thai"], "group": "dzieci 11-15 lat" },
+        { "start": "18:00", "disciplines": ["Boks", "Kickboxing"], "group": "bokserska" }
       ]
     },
     {
@@ -26,8 +25,8 @@
       "label": "Środa",
       "short": "Śr",
       "classes": [
-        { "start": "17:00", "end": "18:30", "discipline": "Muay Thai", "group": "początkująca" },
-        { "start": "18:30", "end": "20:00", "discipline": "MMA", "group": "początkująca" }
+        { "start": "18:00", "disciplines": ["Kickboxing", "Muay Thai"], "group": "początkująca" },
+        { "start": "19:00", "disciplines": ["Kickboxing", "Muay Thai"], "group": "zaawansowana" }
       ]
     },
     {
@@ -35,9 +34,9 @@
       "label": "Czwartek",
       "short": "Czw",
       "classes": [
-        { "start": "17:00", "end": "18:00", "discipline": "BJJ", "group": "początkująca" },
-        { "start": "17:30", "end": "19:00", "discipline": "Kickboxing", "group": "mieszana" },
-        { "start": "19:00", "end": "20:30", "discipline": "Boks", "group": "zaawansowana" }
+        { "start": "16:00", "disciplines": ["Kickboxing", "Muay Thai"], "group": "dzieci 4-10 lat" },
+        { "start": "17:00", "disciplines": ["Kickboxing", "Muay Thai"], "group": "dzieci 11-15 lat" },
+        { "start": "18:00", "disciplines": ["Boks", "Kickboxing"], "group": "bokserska" }
       ]
     },
     {
@@ -45,9 +44,8 @@
       "label": "Piątek",
       "short": "Pt",
       "classes": [
-        { "start": "17:00", "end": "18:30", "discipline": "Muay Thai", "group": "początkująca" },
-        { "start": "18:30", "end": "20:00", "discipline": "MMA", "group": "mieszana" },
-        { "start": "20:00", "end": "21:30", "discipline": "Muay Thai", "group": "zaawansowana" }
+        { "start": "17:00", "disciplines": ["Kickboxing", "Muay Thai"], "group": "łączona dzieci" },
+        { "start": "18:00", "disciplines": ["Kickboxing", "Muay Thai"], "group": "łączona dorośli" }
       ]
     },
     {
@@ -55,9 +53,7 @@
       "label": "Sobota",
       "short": "Sob",
       "classes": [
-        { "start": "10:00", "end": "11:30", "discipline": "Muay Thai", "group": "mieszana" },
-        { "start": "10:00", "end": "11:00", "discipline": "Kickboxing", "group": "początkująca" },
-        { "start": "11:00", "end": "12:30", "discipline": "BJJ", "group": "mieszana" }
+        { "start": "11:00", "disciplines": ["Przygotowanie motoryczne"] }
       ]
     }
   ]

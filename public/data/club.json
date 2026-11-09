@@ -1,11 +1,7 @@
 {
-  "h1": "KLUB SPORTÓW WALKI",
-  "slogan": "Boks, kickboxing, MMA, Muay Thai, BJJ.",
-  "facebook": "#",
-  "instagram": "#",
-  "address": ["ul. Przykładowa 12", "00-000 Warszawa"],
-  "openingHours": [
-    { "label": "Pon. - Pt.", "hours": "7:00 - 22:30" },
-    { "label": "Sob.", "hours": "9:00 - 16:00" }
-  ]
+  "h1": "Fight Point",
+  "slogan": "Trenuj sporty walki pod okiem profesjonalistów",
+  "facebook": "https://www.facebook.com/p/FIGHT-POINT-Bia%C5%82a-Podlaska-100057448749482",
+  "instagram": "https://www.instagram.com/fightpointbp/",
+  "address": ["Terebelska 51A", "Biała Podlaska, Poland, 21-500"]
 }
