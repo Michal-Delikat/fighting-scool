@@ -35,6 +35,9 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
 }
 
 .trenerzy__photo {
@@ -85,7 +88,8 @@
   }
 
   .trenerzy__list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: minmax(0, 380px);
+    justify-content: center;
     gap: 40px;
   }
 
