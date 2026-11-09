@@ -1,13 +1,17 @@
 {
-  "disciplines": ["MMA", "BJJ"],
+  "disciplines": ["Boks", "MMA", "BJJ"],
   "days": [
     {
       "id": "pon",
       "label": "Poniedziałek",
       "short": "Pon",
       "classes": [
+        { "start": "16:00", "discipline": "Boks", "group": "grupa 10 - 15 lat" },
+        { "start": "17:00", "discipline": "Boks", "group": "grupa podstawowa" },
         { "start": "17:30", "discipline": "MMA", "group": "podstawowa" },
-        { "start": "18:30", "discipline": "MMA", "group": "zaawansowana" }
+        { "start": "18:00", "discipline": "Boks", "group": "grupa zaawansowana" },
+        { "start": "18:30", "discipline": "MMA", "group": "zaawansowana" },
+        { "start": "19:30", "discipline": "Boks", "group": "kobiety" }
       ]
     },
     {
@@ -16,7 +20,10 @@
       "short": "Wt",
       "classes": [
         { "start": "16:00", "end": "16:45", "discipline": "BJJ", "group": "dzieci (4–6 lat)" },
-        { "start": "18:00", "end": "19:00", "discipline": "BJJ", "group": "dorośli" }
+        { "start": "16:00", "discipline": "Boks", "group": "grupa 6 - 9 lat" },
+        { "start": "17:30", "discipline": "Boks", "group": "K1" },
+        { "start": "18:00", "end": "19:00", "discipline": "BJJ", "group": "dorośli" },
+        { "start": "18:30", "discipline": "Boks", "group": "grupa zawodnicza" }
       ]
     },
     {
@@ -24,7 +31,10 @@
       "label": "Środa",
       "short": "Śr",
       "classes": [
-        { "start": "17:00", "end": "18:00", "discipline": "MMA", "group": "spary" }
+        { "start": "17:00", "end": "18:00", "discipline": "MMA", "group": "spary" },
+        { "start": "17:00", "discipline": "Boks", "group": "open" },
+        { "start": "18:00", "discipline": "Boks", "group": "grupa podstawowa" },
+        { "start": "19:30", "discipline": "Boks", "group": "kobiety" }
       ]
     },
     {
@@ -33,8 +43,11 @@
       "short": "Czw",
       "classes": [
         { "start": "16:00", "end": "16:45", "discipline": "BJJ", "group": "dzieci (4–6 lat)" },
+        { "start": "16:00", "discipline": "Boks", "group": "grupa 10 - 15 lat" },
         { "start": "17:00", "discipline": "MMA", "group": "podstawowa" },
-        { "start": "18:00", "discipline": "MMA", "group": "zaawansowana" }
+        { "start": "17:30", "discipline": "Boks", "group": "K1" },
+        { "start": "18:00", "discipline": "MMA", "group": "zaawansowana" },
+        { "start": "18:30", "discipline": "Boks", "group": "grupa zaawansowana" }
       ]
     },
     {
@@ -42,7 +55,10 @@
       "label": "Piątek",
       "short": "Pt",
       "classes": [
-        { "start": "18:00", "end": "19:00", "discipline": "BJJ", "group": "dorośli" }
+        { "start": "16:00", "discipline": "Boks", "group": "grupa 6 - 9 lat" },
+        { "start": "17:00", "discipline": "Boks", "group": "grupa zawodnicza" },
+        { "start": "18:00", "end": "19:00", "discipline": "BJJ", "group": "dorośli" },
+        { "start": "19:00", "discipline": "Boks", "group": "grupa MINI (Max 6 osób)" }
       ]
     }
   ]
