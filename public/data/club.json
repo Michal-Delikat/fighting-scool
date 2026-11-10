@@ -1,9 +1,9 @@
 {
-  "h1": "KLUB SPORTÓW WALKI",
-  "slogan": "Boks, kickboxing, MMA, Muay Thai, BJJ.",
-  "facebook": "#",
-  "instagram": "#",
-  "address": ["ul. Przykładowa 12", "00-000 Warszawa"],
+  "h1": "Żarski Klub sportów walki",
+  "slogan": "Muaythai, Boks, MMA, Armwrestling, Kickboxing K-1, Trening funkcjonalny, Kettlebell",
+  "facebook": "https://www.facebook.com/zarskiksw",
+  "instagram": "https://www.instagram.com/zarski_klub_sportow_walki/",
+  "address": ["1 Maja 7", "68-200 Żary"],
   "openingHours": [
     { "label": "Pon. - Pt.", "hours": "7:00 - 22:30" },
     { "label": "Sob.", "hours": "9:00 - 16:00" }

@@ -75,13 +75,16 @@
 }
 
 .site-logo {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 1;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
   color: var(--text);
   text-decoration: none;
+}
+
+.site-logo img {
+  display: block;
+  width: auto;
+  height: 48px;
 }
 
 .site-nav {
@@ -210,8 +213,10 @@
   }
 
   .site-logo {
-    display: flex;
-    align-items: center;
+    height: 56px;
+  }
+
+  .site-logo img {
     height: 56px;
   }
 

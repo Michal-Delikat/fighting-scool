@@ -202,7 +202,6 @@
 
 .grafik__group {
   color: var(--muted);
-  text-transform: capitalize;
 }
 
 .grafik__empty {

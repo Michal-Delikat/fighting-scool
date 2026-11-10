@@ -1,14 +1,14 @@
 {
-  "disciplines": ["Boks", "Kickboxing", "MMA", "Muay Thai", "BJJ"],
+  "disciplines": ["Muaythai / K1", "MMA", "Kettlebell", "Kids Boxing", "Muaythai Kickboxing", "Trening funkcjonalny obwodowy"],
   "days": [
     {
       "id": "pon",
       "label": "Poniedziałek",
       "short": "Pon",
       "classes": [
-        { "start": "12:00", "end": "13:00", "discipline": "Muay Thai", "group": "mieszana" },
-        { "start": "17:00", "end": "18:30", "discipline": "Boks", "group": "początkująca" },
-        { "start": "19:00", "end": "20:30", "discipline": "BJJ", "group": "początkująca" }
+        { "start": "16:15", "discipline": "Kids Boxing", "group": "dzieci 4–6 lat" },
+        { "start": "17:00", "discipline": "Muaythai Kickboxing", "group": "dzieci 10–13 lat" },
+        { "start": "18:00", "discipline": "Muaythai / K1", "group": "młodzież +14 lat i dorośli, gr. zaawansowana i zawodnicza" }
       ]
     },
     {
@@ -16,9 +16,11 @@
       "label": "Wtorek",
       "short": "Wt",
       "classes": [
-        { "start": "16:00", "end": "17:00", "discipline": "Kickboxing", "group": "początkująca" },
-        { "start": "18:00", "end": "19:30", "discipline": "Muay Thai", "group": "mieszana" },
-        { "start": "19:30", "end": "21:00", "discipline": "MMA", "group": "mieszana" }
+        { "start": "16:30", "discipline": "Muaythai Kickboxing", "group": "dzieci 7–9 lat" },
+        { "start": "17:30", "discipline": "Muaythai / K1", "group": "młodzież +14 lat i dorośli, początkujący i rekreacja" },
+        { "start": "19:00", "discipline": "MMA", "group": "młodzież +14 lat i dorośli" },
+        { "start": "19:00", "discipline": "Kettlebell" },
+        { "start": "20:00", "discipline": "Kettlebell", "group": "dla kobiet" }
       ]
     },
     {
@@ -26,8 +28,9 @@
       "label": "Środa",
       "short": "Śr",
       "classes": [
-        { "start": "17:00", "end": "18:30", "discipline": "Muay Thai", "group": "początkująca" },
-        { "start": "18:30", "end": "20:00", "discipline": "MMA", "group": "początkująca" }
+        { "start": "16:15", "discipline": "Kids Boxing", "group": "dzieci 4–6 lat" },
+        { "start": "17:00", "discipline": "Muaythai Kickboxing", "group": "dzieci 10–13 lat" },
+        { "start": "18:00", "discipline": "Muaythai / K1", "group": "młodzież +14 lat i dorośli, gr. zaawansowana i zawodnicza" }
       ]
     },
     {
@@ -35,9 +38,11 @@
       "label": "Czwartek",
       "short": "Czw",
       "classes": [
-        { "start": "17:00", "end": "18:00", "discipline": "BJJ", "group": "początkująca" },
-        { "start": "17:30", "end": "19:00", "discipline": "Kickboxing", "group": "mieszana" },
-        { "start": "19:00", "end": "20:30", "discipline": "Boks", "group": "zaawansowana" }
+        { "start": "10:00", "discipline": "Kettlebell" },
+        { "start": "16:30", "discipline": "Muaythai Kickboxing", "group": "dzieci 7–9 lat" },
+        { "start": "17:30", "discipline": "Muaythai / K1", "group": "młodzież +14 lat i dorośli, początkujący i rekreacja" },
+        { "start": "19:00", "discipline": "MMA", "group": "młodzież +14 lat i dorośli" },
+        { "start": "19:00", "discipline": "Trening funkcjonalny obwodowy" }
       ]
     },
     {
@@ -45,19 +50,7 @@
       "label": "Piątek",
       "short": "Pt",
       "classes": [
-        { "start": "17:00", "end": "18:30", "discipline": "Muay Thai", "group": "początkująca" },
-        { "start": "18:30", "end": "20:00", "discipline": "MMA", "group": "mieszana" },
-        { "start": "20:00", "end": "21:30", "discipline": "Muay Thai", "group": "zaawansowana" }
-      ]
-    },
-    {
-      "id": "sob",
-      "label": "Sobota",
-      "short": "Sob",
-      "classes": [
-        { "start": "10:00", "end": "11:30", "discipline": "Muay Thai", "group": "mieszana" },
-        { "start": "10:00", "end": "11:00", "discipline": "Kickboxing", "group": "początkująca" },
-        { "start": "11:00", "end": "12:30", "discipline": "BJJ", "group": "mieszana" }
+        { "start": "18:00", "discipline": "Muaythai / K1", "group": "młodzież +14 lat i dorośli, gr. zaawansowana i zawodnicza" }
       ]
     }
   ]
