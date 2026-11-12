@@ -10,7 +10,7 @@
 }
 
 .trenerzy__title {
-  font-size: clamp(32px, 8vw, 48px);
+  font-size: var(--fs-h2);
   line-height: 1.05;
   margin-bottom: 16px;
 }
@@ -18,7 +18,7 @@
 .trenerzy__intro {
   margin: 0 0 32px;
   max-width: 60ch;
-  font-size: 17px;
+  font-size: var(--fs-lg);
   line-height: 1.6;
 }
 
@@ -46,28 +46,28 @@
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: clamp(48px, 12vw, 72px);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h1);
   line-height: 1;
 }
 
 .trenerzy__name {
   margin-top: 4px;
-  font-size: clamp(24px, 5vw, 32px);
+  font-size: var(--fs-h3);
   line-height: 1.1;
 }
 
 .trenerzy__disciplines {
   margin: 0;
   color: var(--accent);
-  font-size: 14px;
+  font-size: var(--fs-body);
   text-transform: uppercase;
   letter-spacing: .03em;
 }
 
 .trenerzy__desc {
   margin: 0;
-  font-size: 15px;
+  font-size: var(--fs-body);
   line-height: 1.6;
 }
 
@@ -77,11 +77,11 @@
   }
 
   .trenerzy__title {
-    font-size: clamp(40px, 4vw, 56px);
+    font-size: var(--fs-h2);
   }
 
   .trenerzy__intro {
-    font-size: 20px;
+    font-size: var(--fs-lg);
   }
 
   .trenerzy__list {
@@ -90,10 +90,10 @@
   }
 
   .trenerzy__photo {
-    font-size: clamp(56px, 6vw, 88px);
+    font-size: var(--fs-h1);
   }
 
   .trenerzy__desc {
-    font-size: 16px;
+    font-size: var(--fs-body);
   }
 }

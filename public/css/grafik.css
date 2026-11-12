@@ -10,7 +10,7 @@
 }
 
 .grafik__title {
-  font-size: clamp(32px, 8vw, 48px);
+  font-size: var(--fs-h2);
   line-height: 1.05;
   margin-bottom: 24px;
 }
@@ -27,7 +27,7 @@
   flex-direction: column;
   gap: 4px;
   width: 100%;
-  font-size: 13px;
+  font-size: var(--fs-body);
 }
 
 .grafik__select-wrap {
@@ -47,8 +47,8 @@
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body);
   text-align: left;
   cursor: pointer;
 }
@@ -97,7 +97,7 @@
   align-items: center;
   min-height: 40px;
   padding: 8px 10px;
-  font-size: 15px;
+  font-size: var(--fs-body);
   cursor: pointer;
 }
 
@@ -126,8 +126,8 @@
   background: transparent;
   color: var(--text);
   font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body);
   text-transform: uppercase;
   letter-spacing: .03em;
   cursor: pointer;
@@ -180,15 +180,15 @@
 
 .grafik__time {
   font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);
   line-height: 1;
 }
 
 .grafik__discipline {
   font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body);
   text-transform: uppercase;
   letter-spacing: .02em;
 }
@@ -197,7 +197,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4px 12px;
-  font-size: 13px;
+  font-size: var(--fs-body);
 }
 
 .grafik__group {
@@ -206,12 +206,12 @@
 }
 
 .grafik__empty {
-  font-size: 14px;
+  font-size: var(--fs-body);
 }
 
 .grafik__footnote {
   margin: 24px 0 0;
-  font-size: 14px;
+  font-size: var(--fs-body);
   line-height: 1.5;
   color: var(--muted);
 }
@@ -231,7 +231,7 @@
   }
 
   .grafik__title {
-    font-size: clamp(40px, 4vw, 56px);
+    font-size: var(--fs-h2);
   }
 
   .grafik__filters {
@@ -260,13 +260,13 @@
   .grafik__day-name {
     display: block;
     margin-bottom: 12px;
-    font-size: clamp(16px, 2vw, 24px);
+    font-size: var(--fs-h3);
     line-height: 1.1;
   }
 
 
   .grafik__time {
-    font-size: 22px;
+    font-size: var(--fs-lg);
   }
 }
 
@@ -274,7 +274,7 @@
   .grafik__days.is-all .grafik__day-name {
     display: block;
     margin-bottom: 12px;
-    font-size: 22px;
+    font-size: var(--fs-lg);
     line-height: 1.1;
   }
 
