@@ -80,6 +80,7 @@
 
 .site-footer__bottom a {
   color: var(--text);
+  font-size: var(--fs-lg);
   text-decoration: none;
 }
 

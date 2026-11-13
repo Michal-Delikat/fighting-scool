@@ -90,13 +90,15 @@ h2 {
   color: var(--bg);
   font-family: var(--font-button);
   font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);
+  text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
 }
 
 .btn:hover {
   background: var(--bg);
-  color: var(--text);
+  color: var(--accent);
 }
 
 .btn:focus-visible {

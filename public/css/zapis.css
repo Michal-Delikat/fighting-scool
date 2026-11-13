@@ -337,6 +337,7 @@
 
   .zapis__faq-item summary {
     font-size: var(--fs-lg);
+    text-transform: uppercase;
   }
 
   .zapis__faq-item p {
