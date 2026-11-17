@@ -30,18 +30,6 @@
     });
   }
 
-  function renderHours(el, entries) {
-    if (!el || !entries || entries.length === 0) {
-      return;
-    }
-    el.textContent = '';
-    entries.forEach(function (entry) {
-      var p = document.createElement('p');
-      p.textContent = entry.label + ' ' + entry.hours;
-      el.appendChild(p);
-    });
-  }
-
   fetch('data/club.json')
     .then(function (response) {
       if (!response.ok) {
@@ -55,7 +43,6 @@
       setHrefs('[data-club="facebook"]', data.facebook);
       setHrefs('[data-club="instagram"]', data.instagram);
       renderAddress(document.querySelector('[data-club="address"]'), data.address);
-      renderHours(document.querySelector('[data-club="opening-hours"]'), data.openingHours);
     })
     .catch(function () {});
 })();

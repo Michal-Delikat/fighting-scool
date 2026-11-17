@@ -33,7 +33,7 @@
 
     var time = document.createElement('span');
     time.className = 'grafik__time';
-    time.textContent = entry.start + '–' + entry.end;
+    time.textContent = entry.end ? entry.start + '–' + entry.end : entry.start;
 
     var discipline = document.createElement('span');
     discipline.className = 'grafik__discipline';
@@ -266,9 +266,13 @@
 
     createDropdown(groupRoot, [
       { value: '', label: 'Wszystkie' },
+      { value: 'dzieci', label: 'Dzieci' },
+      { value: 'kadet', label: 'Kadet' },
       { value: 'początkująca', label: 'Początkująca' },
-      { value: 'mieszana', label: 'Mieszana' },
-      { value: 'zaawansowana', label: 'Zaawansowana' }
+      { value: 'średniozaawansowana', label: 'Średniozaawansowana' },
+      { value: 'zaawansowana', label: 'Zaawansowana' },
+      { value: 'otwarta', label: 'Otwarta' },
+      { value: 'zawodnicza', label: 'Zawodnicza' }
     ], function (value) {
       state.group = value;
       applyFilters();

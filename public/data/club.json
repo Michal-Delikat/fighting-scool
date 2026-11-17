@@ -1,11 +1,7 @@
 {
-  "h1": "KLUB SPORTÓW WALKI",
+  "h1": "Sporty Walki Piła",
   "slogan": "Boks, kickboxing, MMA, Muay Thai, BJJ.",
-  "facebook": "#",
-  "instagram": "#",
-  "address": ["ul. Przykładowa 12", "00-000 Warszawa"],
-  "openingHours": [
-    { "label": "Pon. - Pt.", "hours": "7:00 - 22:30" },
-    { "label": "Sob.", "hours": "9:00 - 16:00" }
-  ]
+  "facebook": "https://www.facebook.com/SportyWalkiPila/",
+  "instagram": "https://www.instagram.com/sporty_walki_pila/",
+  "address": ["aleja Wojska Polskiego 49B", "64-920 Piła"]
 }
