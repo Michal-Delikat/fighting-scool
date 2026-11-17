@@ -67,8 +67,8 @@
 
 .site-footer__bottom {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 12px;
   margin-top: 64px;
   font-size: var(--fs-body);
