@@ -41,8 +41,6 @@
 }
 
 .zapis__hint {
-  padding: 16px;
-  border: 1px solid var(--bg);
   border-radius: var(--radius);
 }
 

@@ -35,9 +35,8 @@
 }
 
 .dojazd__info {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
@@ -55,10 +54,19 @@
 }
 
 .dojazd__cta {
+  align-self: flex-start;
   justify-self: end;
 }
 
 .dojazd__cta:focus-visible {
   outline: 2px solid var(--bg);
   outline-offset: 2px;
+}
+
+@media (min-width: 769px) {
+  .dojazd__info {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
 }
