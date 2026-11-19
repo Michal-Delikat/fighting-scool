@@ -102,6 +102,20 @@
   text-decoration: none;
 }
 
+.site-nav > a.site-nav__cta {
+  margin: 8px 20px;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.site-nav > a.site-nav__cta:hover {
+  border-color: var(--accent);
+}
+
 .site-nav__social {
   display: flex;
   align-items: center;
@@ -228,6 +242,18 @@
   }
 
   .site-nav > a:hover {
+    color: var(--accent);
+  }
+
+  .site-nav > a.site-nav__cta {
+    display: inline-flex;
+    margin: 0;
+    min-height: 48px;
+    padding: 0 20px;
+  }
+
+  .site-nav > a.site-nav__cta:hover {
+    background: var(--bg);
     color: var(--accent);
   }
 

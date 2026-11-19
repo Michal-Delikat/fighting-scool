@@ -18,7 +18,7 @@
 .treningi__item {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1rem;
 }
 
 .treningi__item + .treningi__item {
@@ -31,13 +31,7 @@
   text-align: left;
 }
 
-.treningi__row {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.treningi__text p {
+.treningi__item p {
   margin: 0;
   font-size: var(--fs-lg);
   line-height: 1.6;
@@ -82,24 +76,7 @@
     width: calc(50% - 36px);
   }
 
-  .treningi__row {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 24px;
-  }
-
-  .treningi__text {
-    order: 1;
-  }
-
-  .treningi__media {
-    order: 2;
-    margin-top: auto;
-  }
-
-  .treningi__text p {
+  .treningi__item p {
     font-size: var(--fs-lg);
   }
 }
