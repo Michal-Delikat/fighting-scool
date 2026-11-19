@@ -30,16 +30,17 @@
     });
   }
 
-  function renderHours(el, entries) {
-    if (!el || !entries || entries.length === 0) {
-      return;
-    }
-    el.textContent = '';
-    entries.forEach(function (entry) {
-      var p = document.createElement('p');
-      p.textContent = entry.label + ' ' + entry.hours;
-      el.appendChild(p);
+  function renderAll(selector, render, data) {
+    Array.prototype.forEach.call(document.querySelectorAll(selector), function (el) {
+      render(el, data);
     });
+  }
+
+  function routeUrl(lines) {
+    if (!lines || lines.length === 0) {
+      return '';
+    }
+    return 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(lines.join(', '));
   }
 
   fetch('data/club.json')
@@ -54,8 +55,16 @@
       setText('[data-club="slogan"]', data.slogan);
       setHrefs('[data-club="facebook"]', data.facebook);
       setHrefs('[data-club="instagram"]', data.instagram);
-      renderAddress(document.querySelector('[data-club="address"]'), data.address);
-      renderHours(document.querySelector('[data-club="opening-hours"]'), data.openingHours);
+      renderAll('[data-club="address"]', renderAddress, data.address);
+
+      var destination = routeUrl(data.address);
+      if (destination) {
+        setHrefs('[data-club="route"]', destination);
+        var mapImage = document.querySelector('[data-club="map-image"]');
+        if (mapImage) {
+          mapImage.alt = 'Mapa dojazdu: ' + data.address.join(', ');
+        }
+      }
     })
     .catch(function () {});
 })();

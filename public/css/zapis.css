@@ -235,14 +235,6 @@
   margin-top: 0;
 }
 
-.zapis__map img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--muted);
-  border-radius: var(--radius);
-}
-
 .zapis__faq-title {
   font-size: var(--fs-h3);
   line-height: 1.1;

@@ -1,0 +1,64 @@
+.dojazd {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dojazd__title {
+  font-size: var(--fs-h3);
+  line-height: 1.1;
+}
+
+.dojazd__map {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--bg);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.dojazd__map:hover {
+  filter: brightness(1.04);
+  transform: translateY(-2px);
+}
+
+.dojazd__map:focus-visible {
+  outline: 2px solid var(--bg);
+  outline-offset: 2px;
+}
+
+.dojazd__map img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.dojazd__info {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 16px;
+}
+
+.dojazd__label {
+  margin: 0 0 4px;
+  font-size: var(--fs-body);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.dojazd__address {
+  margin: 0;
+  font-size: var(--fs-lg);
+  line-height: 1.4;
+}
+
+.dojazd__cta {
+  justify-self: end;
+}
+
+.dojazd__cta:focus-visible {
+  outline: 2px solid var(--bg);
+  outline-offset: 2px;
+}

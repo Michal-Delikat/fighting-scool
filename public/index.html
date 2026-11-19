@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="css/cennik.css">
   <link rel="stylesheet" href="css/trenerzy.css">
   <link rel="stylesheet" href="css/zapis.css">
+  <link rel="stylesheet" href="css/dojazd.css">
   <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
@@ -265,8 +266,18 @@
           </div>
         </details>
       </div>
-      <div class="zapis__map">
-        <img src="img/dojazd-mapa.png" alt="Mapa dojazdu" width="576" height="430">
+      <div class="dojazd">
+        <h3 class="dojazd__title">Dojazd</h3>
+        <a class="dojazd__map" href="#" target="_blank" rel="noopener noreferrer" data-club="route" aria-label="Otwórz trasę dojazdu w Google Maps (nowa karta)">
+          <img data-club="map-image" src="img/dojazd-mapa.png" alt="Mapa dojazdu do klubu" width="576" height="430" loading="lazy" decoding="async">
+        </a>
+        <div class="dojazd__info">
+          <div class="dojazd__block">
+            <p class="dojazd__label">Adres</p>
+            <p class="dojazd__address" data-club="address"></p>
+          </div>
+          <a class="btn dojazd__cta" href="#" target="_blank" rel="noopener noreferrer" data-club="route">Wyznacz trasę</a>
+        </div>
       </div>
       </div>
     </div>
@@ -295,10 +306,6 @@
           <a href="tel:+48000000000">+48 000 000 000</a>
           <a href="mailto:adres@email.pl">adres@email.pl</a>
           <p data-club="address">ul. Przykładowa 12<br>00-000 Warszawa</p>
-          <div data-club="opening-hours">
-            <p>Pon. - Pt. 7:00 - 22:30</p>
-            <p>Sob. 9:00 - 16:00</p>
-          </div>
         </div>
       </div>
       <div class="site-footer__bottom">
