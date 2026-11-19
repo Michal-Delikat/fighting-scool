@@ -30,6 +30,18 @@
     });
   }
 
+  function renderHours(el, entries) {
+    if (!el || !entries || entries.length === 0) {
+      return;
+    }
+    el.textContent = '';
+    entries.forEach(function (entry) {
+      var p = document.createElement('p');
+      p.textContent = entry.label + ' ' + entry.hours;
+      el.appendChild(p);
+    });
+  }
+
   function renderAll(selector, render, data) {
     Array.prototype.forEach.call(document.querySelectorAll(selector), function (el) {
       render(el, data);
@@ -56,6 +68,7 @@
       setHrefs('[data-club="facebook"]', data.facebook);
       setHrefs('[data-club="instagram"]', data.instagram);
       renderAll('[data-club="address"]', renderAddress, data.address);
+      renderAll('[data-club="opening-hours"]', renderHours, data.openingHours);
 
       var destination = routeUrl(data.address);
       if (destination) {

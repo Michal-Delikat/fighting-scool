@@ -136,6 +136,11 @@
 }
 
 .grafik__footnote a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.grafik__footnote a:hover {
   color: var(--accent);
 }
 
