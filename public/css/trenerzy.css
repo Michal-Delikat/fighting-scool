@@ -44,11 +44,6 @@
   aspect-ratio: 4 / 5;
   border: 1px solid var(--text);
   background: var(--bg);
-  color: var(--text);
-  font-family: var(--font-heading);
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-h1);
-  line-height: 1;
 }
 
 .trenerzy__name {
@@ -63,12 +58,6 @@
   font-size: var(--fs-body);
   text-transform: uppercase;
   letter-spacing: .03em;
-}
-
-.trenerzy__desc {
-  margin: 0;
-  font-size: var(--fs-body);
-  line-height: 1.6;
 }
 
 @media (min-width: 769px) {
@@ -87,13 +76,5 @@
   .trenerzy__list {
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-  }
-
-  .trenerzy__photo {
-    font-size: var(--fs-h1);
-  }
-
-  .trenerzy__desc {
-    font-size: var(--fs-body);
   }
 }
