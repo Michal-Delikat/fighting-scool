@@ -30,94 +30,13 @@
   font-size: var(--fs-body);
 }
 
-.grafik__select-wrap {
-  position: relative;
-}
-
-.grafik__select {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  width: 100%;
-  min-height: 44px;
-  padding: 8px 14px;
-  border: 1px solid var(--text);
-  border-radius: var(--radius);
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--font-body);
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-body);
-  text-align: left;
-  cursor: pointer;
-}
-
-.grafik__select::after {
-  content: "";
-  flex: 0 0 auto;
-  width: 8px;
-  height: 8px;
-  border-right: 2px solid var(--text);
-  border-bottom: 2px solid var(--text);
-  transform: translateY(-2px) rotate(45deg);
-}
-
-.grafik__select[aria-expanded="true"]::after {
-  transform: translateY(2px) rotate(-135deg);
-}
-
-.grafik__select:focus-visible {
-  outline: 2px solid var(--text);
-  outline-offset: 2px;
-}
-
-.grafik__options {
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 0;
-  right: 0;
-  z-index: 10;
-  max-height: 240px;
-  margin: 0;
-  padding: 4px;
-  overflow-y: auto;
-  list-style: none;
-  border: 1px solid var(--text);
-  border-radius: var(--radius);
-  background: var(--bg);
-}
-
-.grafik__options[hidden] {
-  display: none;
-}
-
-.grafik__options li {
-  display: flex;
-  align-items: center;
-  min-height: 40px;
-  padding: 8px 10px;
-  font-size: var(--fs-body);
-  cursor: pointer;
-}
-
-.grafik__options li[aria-selected="true"] {
-  color: var(--accent);
-}
-
-.grafik__options li:focus {
-  outline: 2px solid var(--text);
-  outline-offset: -2px;
-}
-
-.grafik__tabs {
+.grafik__chips {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 20px;
 }
 
-.grafik__tab {
+.grafik__chip {
   flex: 0 0 auto;
   min-height: 44px;
   padding: 0 14px;
@@ -133,13 +52,13 @@
   cursor: pointer;
 }
 
-.grafik__tab[aria-selected="true"] {
+.grafik__chip[aria-pressed="true"] {
   background: var(--accent);
   border-color: var(--accent);
   color: var(--bg);
 }
 
-.grafik__tab:focus-visible {
+.grafik__chip:focus-visible {
   outline: 2px solid var(--text);
   outline-offset: 2px;
 }
@@ -232,18 +151,6 @@
 
   .grafik__title {
     font-size: var(--fs-h2);
-  }
-
-  .grafik__filters {
-    flex-direction: row;
-  }
-
-  .grafik__filter {
-    width: 240px;
-  }
-
-  .grafik__tabs {
-    display: none;
   }
 
   .grafik__days {

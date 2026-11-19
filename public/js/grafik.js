@@ -4,15 +4,13 @@
     return;
   }
 
-  var tabsEl = section.querySelector('.grafik__tabs');
   var daysEl = section.querySelector('.grafik__days');
   var disciplineRoot = section.querySelector('[data-filter="discipline"]');
   var groupRoot = section.querySelector('[data-filter="group"]');
 
   var state = {
     discipline: '',
-    group: '',
-    activeDay: null
+    group: ''
   };
 
   var data = null;
@@ -72,11 +70,7 @@
 
       var visible = day.classes.filter(matches);
 
-      if (state.activeDay === null) {
-        if (visible.length > 0) {
-          dayEl.classList.add('is-active');
-        }
-      } else if (day.id === state.activeDay) {
+      if (visible.length > 0) {
         dayEl.classList.add('is-active');
       }
       dayEl.classList.toggle('is-empty', visible.length === 0);
@@ -104,152 +98,32 @@
       daysEl.appendChild(dayEl);
     });
 
-    daysEl.classList.toggle('is-all', state.activeDay === null);
+    daysEl.classList.add('is-all');
   }
 
-  function setActiveDay(id) {
-    state.activeDay = id;
-
-    Array.prototype.forEach.call(tabsEl.children, function (tab) {
-      var selected = id !== null && tab.getAttribute('data-day') === id;
-      tab.setAttribute('aria-selected', selected ? 'true' : 'false');
-    });
-
-    Array.prototype.forEach.call(daysEl.children, function (dayEl) {
-      if (id === null) {
-        if (dayEl.classList.contains('is-empty')) {
-          dayEl.classList.remove('is-active');
-        } else {
-          dayEl.classList.add('is-active');
-        }
-      } else if (dayEl.getAttribute('data-day') === id) {
-        dayEl.classList.add('is-active');
-      } else {
-        dayEl.classList.remove('is-active');
-      }
-    });
-
-    daysEl.classList.toggle('is-all', id === null);
-  }
-
-  function renderTabs() {
-    tabsEl.innerHTML = '';
-
-    data.days.forEach(function (day) {
-      var tab = document.createElement('button');
-      tab.type = 'button';
-      tab.className = 'grafik__tab';
-      tab.setAttribute('role', 'tab');
-      tab.setAttribute('data-day', day.id);
-      tab.setAttribute('aria-selected', day.id === state.activeDay ? 'true' : 'false');
-      tab.textContent = day.short;
-
-      tab.addEventListener('click', function () {
-        setActiveDay(state.activeDay === day.id ? null : day.id);
-      });
-
-      tabsEl.appendChild(tab);
-    });
-  }
-
-  function createDropdown(root, options, onSelect) {
-    var button = root.querySelector('.grafik__select');
-    var valueEl = root.querySelector('.grafik__select-value');
-    var list = root.querySelector('.grafik__options');
-    var items = [];
-
-    function close() {
-      list.hidden = true;
-      button.setAttribute('aria-expanded', 'false');
-    }
-
-    function open() {
-      list.hidden = false;
-      button.setAttribute('aria-expanded', 'true');
-      var selected = null;
-      for (var i = 0; i < items.length; i += 1) {
-        if (items[i].getAttribute('aria-selected') === 'true') {
-          selected = items[i];
-          break;
-        }
-      }
-      (selected || items[0]).focus();
-    }
+  function createChips(root, options, getValue, onSelect) {
+    var container = root.querySelector('.grafik__chips');
+    var buttons = [];
 
     function setValue(value) {
-      var label = '';
-      items.forEach(function (item) {
-        var isSelected = item.getAttribute('data-value') === value;
-        item.setAttribute('aria-selected', isSelected ? 'true' : 'false');
-        if (isSelected) {
-          label = item.textContent;
-        }
+      buttons.forEach(function (button) {
+        button.setAttribute('aria-pressed', button.getAttribute('data-value') === value ? 'true' : 'false');
       });
-      valueEl.textContent = label;
       onSelect(value);
     }
 
     options.forEach(function (option) {
-      var item = document.createElement('li');
-      item.setAttribute('role', 'option');
-      item.setAttribute('data-value', option.value);
-      item.setAttribute('aria-selected', option.value === '' ? 'true' : 'false');
-      item.tabIndex = -1;
-      item.textContent = option.label;
-      item.addEventListener('click', function () {
-        setValue(option.value);
-        close();
-        button.focus();
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'grafik__chip';
+      button.setAttribute('data-value', option.value);
+      button.setAttribute('aria-pressed', option.value === getValue() ? 'true' : 'false');
+      button.textContent = option.label;
+      button.addEventListener('click', function () {
+        setValue(option.value === getValue() ? '' : option.value);
       });
-      list.appendChild(item);
-      items.push(item);
-    });
-
-    button.addEventListener('click', function () {
-      if (list.hidden) {
-        open();
-      } else {
-        close();
-      }
-    });
-
-    button.addEventListener('keydown', function (event) {
-      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-        event.preventDefault();
-        open();
-      } else if (event.key === 'Escape') {
-        close();
-      }
-    });
-
-    list.addEventListener('keydown', function (event) {
-      var index = items.indexOf(document.activeElement);
-      if (event.key === 'ArrowDown') {
-        event.preventDefault();
-        items[Math.min(index + 1, items.length - 1)].focus();
-      } else if (event.key === 'ArrowUp') {
-        event.preventDefault();
-        items[Math.max(index - 1, 0)].focus();
-      } else if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        if (index >= 0) {
-          setValue(items[index].getAttribute('data-value'));
-          close();
-          button.focus();
-        }
-      } else if (event.key === 'Escape') {
-        event.preventDefault();
-        close();
-        button.focus();
-      } else if (event.key === 'Tab') {
-        close();
-      }
-    });
-
-    document.addEventListener('click', function (event) {
-      if (!root.contains(event.target)) {
-        close();
-      }
+      container.appendChild(button);
+      buttons.push(button);
     });
   }
 
@@ -259,17 +133,21 @@
       disciplineOptions.push({ value: name, label: name });
     });
 
-    createDropdown(disciplineRoot, disciplineOptions, function (value) {
+    createChips(disciplineRoot, disciplineOptions, function () {
+      return state.discipline;
+    }, function (value) {
       state.discipline = value;
       applyFilters();
     });
 
-    createDropdown(groupRoot, [
+    createChips(groupRoot, [
       { value: '', label: 'Wszystkie' },
       { value: 'początkująca', label: 'Początkująca' },
       { value: 'mieszana', label: 'Mieszana' },
       { value: 'zaawansowana', label: 'Zaawansowana' }
-    ], function (value) {
+    ], function () {
+      return state.group;
+    }, function (value) {
       state.group = value;
       applyFilters();
     });
@@ -289,7 +167,6 @@
     .then(function (json) {
       data = json;
       initFilters();
-      renderTabs();
       renderDays();
     })
     .catch(function () {
