@@ -41,6 +41,7 @@
 
 .hero p {
   margin-top: 16px;
+  max-width: 45ch;
   font-size: var(--fs-lg);
   color: var(--text);
 }
@@ -75,13 +76,27 @@
 }
 
 .site-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-heading);
   font-weight: var(--fw-bold);
   font-size: var(--fs-lg);
   line-height: 1;
-  text-transform: uppercase;
   color: var(--text);
   text-decoration: none;
+}
+
+.site-logo__name {
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.site-logo__img {
+  display: block;
+  width: auto;
+  height: 40px;
+  filter: invert(1);
 }
 
 .site-nav {

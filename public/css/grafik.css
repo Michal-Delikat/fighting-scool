@@ -121,7 +121,6 @@
 
 .grafik__group {
   color: var(--muted);
-  text-transform: capitalize;
 }
 
 .grafik__empty {
@@ -160,7 +159,7 @@
 
   .grafik__days {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 24px;
     align-items: start;
   }

@@ -35,16 +35,17 @@
 
     var discipline = document.createElement('span');
     discipline.className = 'grafik__discipline';
-    discipline.textContent = entry.discipline;
+    discipline.textContent = entry.label || entry.discipline;
 
     var meta = document.createElement('span');
     meta.className = 'grafik__meta';
 
-    var group = document.createElement('span');
-    group.className = 'grafik__group';
-    group.textContent = 'Gr. ' + entry.group;
-
-    meta.appendChild(group);
+    if (entry.detail) {
+      var group = document.createElement('span');
+      group.className = 'grafik__group';
+      group.textContent = entry.detail;
+      meta.appendChild(group);
+    }
 
     if (entry.room) {
       var room = document.createElement('span');
@@ -133,6 +134,11 @@
       disciplineOptions.push({ value: name, label: name });
     });
 
+    var groupOptions = [{ value: '', label: 'Wszystkie' }];
+    data.groups.forEach(function (name) {
+      groupOptions.push({ value: name, label: name });
+    });
+
     createChips(disciplineRoot, disciplineOptions, function () {
       return state.discipline;
     }, function (value) {
@@ -140,12 +146,7 @@
       applyFilters();
     });
 
-    createChips(groupRoot, [
-      { value: '', label: 'Wszystkie' },
-      { value: 'początkująca', label: 'Początkująca' },
-      { value: 'mieszana', label: 'Mieszana' },
-      { value: 'zaawansowana', label: 'Zaawansowana' }
-    ], function () {
+    createChips(groupRoot, groupOptions, function () {
       return state.group;
     }, function (value) {
       state.group = value;

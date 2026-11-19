@@ -1,11 +1,15 @@
 {
-  "h1": "KLUB SPORTÓW WALKI",
-  "slogan": "Boks, kickboxing, MMA, Muay Thai, BJJ.",
-  "facebook": "#",
-  "instagram": "#",
-  "address": ["ul. Przykładowa 12", "00-000 Warszawa"],
+  "h1": "Klub sportów walki",
+  "slogan": "Treningi brazylijskiego jiu-jitsu, MMA, boksu, zapasów, muay thai pod okiem doświadczonej kadry trenerskiej.",
+  "facebook": "https://www.facebook.com/OCTOPUSLODZ",
+  "instagram": "https://www.instagram.com/octopus.lodz/",
+  "address": ["Dowborczyków 17/19", "90-019 Łódź"],
   "openingHours": [
-    { "label": "Pon. - Pt.", "hours": "7:00 - 22:30" },
-    { "label": "Sob.", "hours": "9:00 - 16:00" }
+    { "label": "Poniedziałek", "hours": "06:45 - 12:00, 16:45 - 21:15" },
+    { "label": "Wtorek", "hours": "07:45 - 10:00, 16:45 - 21:15" },
+    { "label": "Środa", "hours": "06:45 - 12:00, 16:45 - 22:15" },
+    { "label": "Czwartek", "hours": "07:45 - 10:00, 16:45 - 21:15" },
+    { "label": "Piątek", "hours": "06:45 - 12:00, 16:45 - 20:00" },
+    { "label": "Sobota", "hours": "09:00 - 12:00" }
   ]
 }

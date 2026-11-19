@@ -15,12 +15,11 @@
   border: 1px solid var(--bg);
   border-radius: var(--radius);
   background: var(--surface);
-  transition: filter 0.2s ease, transform 0.2s ease;
+  transition: filter 0.2s ease;
 }
 
 .dojazd__map:hover {
   filter: brightness(1.04);
-  transform: translateY(-2px);
 }
 
 .dojazd__map:focus-visible {
