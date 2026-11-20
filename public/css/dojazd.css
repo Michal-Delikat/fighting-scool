@@ -11,23 +11,12 @@
 }
 
 .dojazd__map {
-  display: block;
+  position: relative;
   aspect-ratio: 21 / 9;
   overflow: hidden;
   border: 1px solid var(--bg);
   border-radius: var(--radius);
   background: var(--surface);
-  transition: filter 0.2s ease, transform 0.2s ease;
-}
-
-.dojazd__map:hover {
-  filter: brightness(1.04);
-  transform: translateY(-2px);
-}
-
-.dojazd__map:focus-visible {
-  outline: 2px solid var(--bg);
-  outline-offset: 2px;
 }
 
 .dojazd__map img {
@@ -35,6 +24,66 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.dojazd__map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.dojazd__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.dojazd__overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  opacity: 0.7;
+}
+
+.dojazd__load,
+.dojazd__consent,
+.dojazd__map-fallback {
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.dojazd__consent {
+  margin: 0;
+  max-width: 44ch;
+  color: var(--text);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.dojazd__consent a {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.dojazd__map-fallback {
+  color: var(--text);
+  font-size: 0.875rem;
+  text-decoration: underline;
+}
+
+.dojazd__map-fallback:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
 }
 
 .dojazd__info {
@@ -57,7 +106,7 @@
 }
 
 .dojazd__cta {
-  align-self: flex-start;
+  align-self: flex-end;
   justify-self: end;
 }
 

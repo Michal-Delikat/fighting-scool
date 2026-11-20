@@ -95,6 +95,13 @@
   margin-bottom: 0;
 }
 
+.site-footer__address {
+  margin: 0;
+  font-style: normal;
+  font-size: var(--fs-lg);
+  line-height: 1.4;
+}
+
 .site-footer__social {
   display: flex;
   flex-direction: column;

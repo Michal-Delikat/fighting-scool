@@ -283,6 +283,7 @@
 
 .zapis__faq-body-inner {
   padding-bottom: 16px;
+  max-width: 45ch;
 }
 
 .zapis__faq-item p {
