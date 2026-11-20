@@ -25,11 +25,10 @@
       return;
     }
     el.textContent = '';
-    lines.forEach(function (line, index) {
-      if (index > 0) {
-        el.appendChild(document.createElement('br'));
-      }
-      el.appendChild(document.createTextNode(line));
+    lines.forEach(function (line) {
+      var span = document.createElement('span');
+      span.textContent = line;
+      el.appendChild(span);
     });
   }
 

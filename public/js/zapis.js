@@ -134,91 +134,13 @@
     return { setValue: setValue };
   }
 
-  var HEIGHT_MS = 300;
-  var TEXT_MS = 200;
-
   var faqItems = Array.prototype.slice.call(document.querySelectorAll('.zapis__faq-item'));
   var faqOpen = null;
-  var faqAnimating = false;
-
-  function getFaqParts(details) {
-    return {
-      body: details.querySelector('.zapis__faq-body'),
-      inner: details.querySelector('.zapis__faq-body-inner')
-    };
-  }
-
-  function resetFaqItem(details) {
-    var parts = getFaqParts(details);
-    details.classList.remove('is-open');
-    details.open = false;
-    if (parts.body) {
-      parts.body.style.transition = '';
-      parts.body.style.height = '';
-      parts.body.style.overflow = '';
-    }
-    if (parts.inner) {
-      parts.inner.style.transition = '';
-      parts.inner.style.opacity = '';
-    }
-  }
-
-  function openFaqItem(details, parts) {
-    faqAnimating = true;
-    details.classList.add('is-open');
-    details.open = true;
-    parts.body.style.overflow = 'hidden';
-    parts.body.style.height = '0px';
-    parts.inner.style.transition = 'none';
-    parts.inner.style.opacity = '0';
-
-    var target = parts.inner.offsetHeight;
-    void parts.body.offsetHeight;
-
-    parts.body.style.transition = 'height ' + HEIGHT_MS + 'ms linear';
-    parts.body.style.height = target + 'px';
-    parts.inner.style.transition = 'opacity ' + TEXT_MS + 'ms linear ' + HEIGHT_MS + 'ms';
-    parts.inner.style.opacity = '1';
-
-    window.setTimeout(function () {
-      parts.body.style.transition = '';
-      parts.body.style.height = 'auto';
-      parts.body.style.overflow = '';
-      parts.inner.style.transition = '';
-      parts.inner.style.opacity = '';
-      faqAnimating = false;
-    }, HEIGHT_MS + TEXT_MS + 20);
-  }
-
-  function closeFaqItem(details, parts) {
-    faqAnimating = true;
-    details.classList.remove('is-open');
-
-    var current = parts.body.offsetHeight;
-    parts.body.style.overflow = 'hidden';
-    parts.body.style.height = current + 'px';
-    void parts.body.offsetHeight;
-    parts.body.style.transition = 'height ' + HEIGHT_MS + 'ms linear';
-    parts.body.style.height = '0px';
-    parts.inner.style.transition = 'opacity 150ms linear';
-    parts.inner.style.opacity = '0';
-
-    window.setTimeout(function () {
-      details.open = false;
-      parts.body.style.transition = '';
-      parts.body.style.height = '';
-      parts.body.style.overflow = '';
-      parts.inner.style.transition = '';
-      parts.inner.style.opacity = '';
-      faqAnimating = false;
-    }, HEIGHT_MS + 20);
-  }
 
   faqItems.forEach(function (details) {
-    var parts = getFaqParts(details);
     var summary = details.querySelector('summary');
 
-    if (!summary || !parts.body || !parts.inner) {
+    if (!summary) {
       return;
     }
 
@@ -229,19 +151,18 @@
     summary.addEventListener('click', function (event) {
       event.preventDefault();
 
-      if (faqAnimating) {
-        return;
-      }
-
       if (details.open) {
+        details.open = false;
+        details.classList.remove('is-open');
         faqOpen = null;
-        closeFaqItem(details, parts);
       } else {
         if (faqOpen && faqOpen !== details) {
-          resetFaqItem(faqOpen);
+          faqOpen.open = false;
+          faqOpen.classList.remove('is-open');
         }
+        details.open = true;
+        details.classList.add('is-open');
         faqOpen = details;
-        openFaqItem(details, parts);
       }
     });
   });
