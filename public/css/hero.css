@@ -112,10 +112,6 @@
   color: var(--bg);
 }
 
-.site-nav > a.site-nav__cta:hover {
-  border-color: var(--accent);
-}
-
 .site-nav__social {
   display: flex;
   align-items: center;
