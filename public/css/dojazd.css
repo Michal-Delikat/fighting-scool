@@ -12,11 +12,11 @@
 
 .dojazd__map {
   position: relative;
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border: 1px solid var(--bg);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: var(--bg);
 }
 
 .dojazd__map img {
@@ -66,7 +66,7 @@
   margin: 0;
   max-width: 44ch;
   color: var(--text);
-  font-size: 0.875rem;
+  font-size: var(--fs-body);
   line-height: 1.4;
 }
 
@@ -118,6 +118,10 @@
 @media (min-width: 769px) {
   .dojazd {
     margin-top: 64px;
+  }
+
+  .dojazd__map {
+    aspect-ratio: 21 / 9;
   }
 
   .dojazd__info {
