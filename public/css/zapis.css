@@ -45,7 +45,7 @@
 }
 
 .zapis__hint-title {
-  font-size: var(--fs-lg);
+  font-size: var(--fs-h3);
   line-height: 1.1;
   margin-bottom: 8px;
 }
@@ -222,15 +222,8 @@
   color: var(--accent);
 }
 
-.zapis__faq-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  margin-top: 48px;
-}
-
 .zapis__faq {
-  margin-top: 0;
+  margin-top: 48px;
 }
 
 .zapis__faq-title {
@@ -311,18 +304,20 @@
     font-size: var(--fs-lg);
   }
 
+  .zapis__faq {
+    margin-top: 64px;
+  }
+
   .zapis__grid {
     grid-template-columns: 1fr 1fr;
     align-items: start;
     gap: 48px;
   }
 
-  .zapis__faq-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    gap: 48px;
-    margin-top: 64px;
+  .zapis__media img {
+    aspect-ratio: 3 / 4;
+    height: auto;
+    object-fit: cover;
   }
 
   .zapis__faq-item summary {
